@@ -1,5 +1,6 @@
 package com.mtsgsr.webservicespring.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mtsgsr.webservicespring.entities.pk.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -28,6 +29,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order getOrder(){
         return id.getOrder();
     }
